@@ -11,9 +11,9 @@ const About = () => {
       <Head title="About - Pelican Joinery" />
       <div className="min-h-screen">
         <Navbar />
-        <div className="snap-container">
+        <div className="content-container">
           {/* Hero Section */}
-          <section className="snap-section bg-[#1B2B5B] text-white">
+          <section className="content-section bg-[#1B2B5B] text-white">
             <div className="flex items-center justify-center h-full">
               <div className="text-center max-w-4xl mx-auto px-4">
                 <h1 className="text-5xl md:text-6xl font-serif mb-6">Our Story</h1>
@@ -25,14 +25,14 @@ const About = () => {
           </section>
 
           {/* Main About Section */}
-          <section className="snap-section">
+          <section className="content-section">
             <div className="section-content">
               <AboutComponent />
             </div>
           </section>
 
           {/* Team Section */}
-          <section className="snap-section bg-white">
+          <section className="content-section bg-white">
             <div className="section-content">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <h2 className="text-4xl font-serif text-[#1B2B5B] text-center mb-12">Our Expert Team</h2>
@@ -72,7 +72,7 @@ const About = () => {
           </section>
 
           {/* Stats Section */}
-          <section className="snap-section bg-[#1B2B5B]">
+          <section className="content-section bg-[#1B2B5B]">
             <div className="section-content">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-white">
@@ -94,7 +94,7 @@ const About = () => {
           </section>
 
           {/* Values Section */}
-          <section className="snap-section bg-gray-50">
+          <section className="content-section bg-gray-50">
             <div className="section-content">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <h2 className="text-4xl font-serif text-[#1B2B5B] text-center mb-12">Our Values</h2>
