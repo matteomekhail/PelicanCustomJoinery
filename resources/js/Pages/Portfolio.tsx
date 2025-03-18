@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Head } from '@inertiajs/react';
-import PortfolioComponent from '@/Components/Portfolio';
 import Navbar from '@/Components/Navbar';
 import Footer from '@/Components/Footer';
 import { Search, Filter, Star } from 'lucide-react';
@@ -81,7 +80,6 @@ const Portfolio = () => {
                     </div>
                   </div>
                 </div>
-                <PortfolioComponent />
               </div>
             </div>
           </section>

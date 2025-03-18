@@ -1,6 +1,5 @@
 import React from 'react';
 import { Head } from '@inertiajs/react';
-import AboutComponent from '@/Components/About';
 import Navbar from '@/Components/Navbar';
 import Footer from '@/Components/Footer';
 import { Award, Users, Clock, Wrench, Star } from 'lucide-react';
@@ -27,7 +26,6 @@ const About = () => {
           {/* Main About Section */}
           <section className="content-section">
             <div className="section-content">
-              <AboutComponent />
             </div>
           </section>
 
