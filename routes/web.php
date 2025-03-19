@@ -29,4 +29,13 @@ Route::get('/contact', function () {
     return Inertia::render('Contact');
 });
 
+// Project-specific routes
+Route::get('/projects/yowie-bay', function () {
+    return Inertia::render('Projects/YowieBay');
+});
+
+Route::get('/projects/sylvania', function () {
+    return Inertia::render('Projects/Sylvania');
+});
+
 require __DIR__.'/auth.php';
