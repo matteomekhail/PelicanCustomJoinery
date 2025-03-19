@@ -62,7 +62,7 @@ const Contact = () => {
             <div className="relative rounded-2xl overflow-hidden h-full">
               <div className="absolute inset-0">
                 <img 
-                  src="/img/Sylvania/0O2A0867-HDR.jpg" 
+                  src="https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/3396ce18-1bc8-4baf-eea0-ca012dc0cd00/public" 
                   alt="Pelican Custom Joinery craftsmanship" 
                   className="h-full w-full object-cover"
                 />
