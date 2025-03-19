@@ -3,6 +3,8 @@ import Navbar from '@/Components/Navbar';
 import { PageProps } from '@/types';
 import { Head, Link } from '@inertiajs/react';
 import Services from '@/Components/Services';
+import WorkProcess from '@/Components/WorkProcess';
+import Portfolio from '@/Components/Portfolio';
 import Contact from '@/Components/Contact';
 import Footer from '@/Components/Footer';
 
@@ -18,6 +20,16 @@ export default function Welcome(){
                     <section className="content-section">
                         <div className="section-content">
                             <Services />
+                        </div>
+                    </section>
+                    <section className="content-section">
+                        <div className="section-content">
+                            <WorkProcess />
+                        </div>
+                    </section>
+                    <section className="content-section">
+                        <div className="section-content">
+                            <Portfolio />
                         </div>
                     </section>
                     <section className="content-section">

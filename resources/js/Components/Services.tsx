@@ -7,31 +7,46 @@ const serviceItems = [
     icon: <ClipboardList className="w-6 h-6 sm:w-7 sm:h-7" />,
     title: 'Project Management',
     description: 'Comprehensive oversight of your joinery project from concept to completion, ensuring timely delivery and quality craftsmanship.',
-    images: ['/img/0O2A0896.jpg', '/img/0O2A0894.jpg'],
+    images: [
+      'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/3b789467-67a8-440c-b6b1-95cd9b511e00/public',
+      'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/f1deecc6-d26a-401a-54cd-cf406070ba00/public'
+    ],
   },
   {
     icon: <PenTool className="w-6 h-6 sm:w-7 sm:h-7" />,
     title: 'Drafting',
     description: 'Detailed technical drawings and 3D visualizations that bring your ideas to life before manufacturing begins.',
-    images: ['/img/0O2A0893.jpg', '/img/0O2A0892.jpg'],
+    images: [
+      'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/4a03fbb4-9e3c-4cd0-d836-5047e61f0500/public',
+      'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/c43a604b-f48b-418d-fe68-f7690ba02d00/public'
+    ],
   },
   {
     icon: <Wrench className="w-6 h-6 sm:w-7 sm:h-7" />,
     title: 'Manufacturing',
     description: 'Precision crafting of custom joinery using premium materials and advanced techniques in our state-of-the-art workshop.',
-    images: ['/img/0O2A0891.jpg', '/img/0O2A0890.jpg'],
+    images: [
+      'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/ef4eb51b-8b50-4727-3097-be936e05f800/public',
+      'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/0ce70f01-059f-464f-e4b6-9f03a9f1c400/public'
+    ],
   },
   {
     icon: <Hammer className="w-6 h-6 sm:w-7 sm:h-7" />,
     title: 'Installation',
     description: 'Expert installation by our skilled team, ensuring perfect fit and finish for your custom joinery pieces.',
-    images: ['/img/0O2A0889.jpg', '/img/0O2A0888-HDR.jpg'],
+    images: [
+      'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/9cc57e06-d2c4-4b91-b14c-f57bfae8c700/public',
+      'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/bee5cb92-736b-4c22-1451-13692c43c300/public'
+    ],
   },
   {
     icon: <Lightbulb className="w-6 h-6 sm:w-7 sm:h-7" />,
     title: 'Specialised Projects',
     description: 'Unique and complex joinery solutions for challenging spaces or distinctive design requirements.',
-    images: ['/img/0O2A0885-HDR.jpg', '/img/0O2A0882-HDR.jpg'],
+    images: [
+      'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/f1deecc6-d26a-401a-54cd-cf406070ba00/public',
+      'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/1ac9973e-2842-4065-0702-1cb7bc29fe00/public'
+    ],
   },
 ];
 
