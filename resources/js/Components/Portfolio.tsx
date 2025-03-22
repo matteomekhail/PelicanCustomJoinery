@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Eye, ArrowRight } from 'lucide-react';
 import { Link } from '@inertiajs/react';
+import AnchorLink from '@/Components/AnchorLink';
 
 const portfolioProjects = [
   {

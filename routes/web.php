@@ -38,4 +38,34 @@ Route::get('/projects/sylvania', function () {
     return Inertia::render('Projects/Sylvania');
 });
 
+// Add Privacy Policy and Terms routes
+Route::get('/privacy-policy', function () {
+    return Inertia::render('Policies/PrivacyPolicy');
+});
+
+Route::get('/terms', function () {
+    return Inertia::render('Policies/Terms');
+});
+
+// Add specific service routes
+Route::get('/services/furniture', function () {
+    return Inertia::render('Services/Furniture');
+});
+
+Route::get('/services/kitchens', function () {
+    return Inertia::render('Services/Kitchens');
+});
+
+Route::get('/services/joinery', function () {
+    return Inertia::render('Services/Joinery');
+});
+
+Route::get('/services/restoration', function () {
+    return Inertia::render('Services/Restoration');
+});
+
+Route::get('/services/commercial', function () {
+    return Inertia::render('Services/Commercial');
+});
+
 require __DIR__.'/auth.php';

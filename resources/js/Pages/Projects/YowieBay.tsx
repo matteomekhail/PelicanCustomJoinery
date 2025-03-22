@@ -5,22 +5,6 @@ import Navbar from '@/Components/Navbar';
 import Footer from '@/Components/Footer';
 import { Link } from '@inertiajs/react';
 
-// Helper function to add Cloudflare Image optimization parameters
-const optimizeImage = (imageUrl: string, variant: string = 'public') => {
-  if (!imageUrl || !imageUrl.includes('imagedelivery.net')) return imageUrl;
-  
-  // Cloudflare Images uses variants that need to be set up in the Cloudflare dashboard
-  // We should use the pre-configured variants rather than try to add parameters directly
-  
-  if (variant === 'public') {
-    // Return original URL if no variant specified
-    return imageUrl;
-  }
-  
-  // Replace the variant part of the URL (usually 'public') with the requested variant
-  return imageUrl.replace(/\/[^\/]+$/, `/${variant}`);
-};
-
 const YowieBayProject = () => {
   const [activeImage, setActiveImage] = useState<string | null>(null);
   

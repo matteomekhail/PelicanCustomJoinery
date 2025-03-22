@@ -1,11 +1,18 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Menu, X, Phone, ChevronDown, Home, Grid, ClipboardList, Mail } from 'lucide-react';
 import { Link, usePage } from '@inertiajs/react';
+import AnchorLink from '@/Components/AnchorLink';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const { url } = usePage();
+  
+  // Initialize scrolled state based on the current URL
+  // Set to true for service and policy pages that have light backgrounds
+  const isServiceOrPolicyPage = url.startsWith('/services/') || 
+                               url === '/privacy-policy' || 
+                               url === '/terms';
+  const [scrolled, setScrolled] = useState(isServiceOrPolicyPage);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -27,22 +34,27 @@ const Navbar = () => {
       { href: '/services/restoration', label: 'Restoration' },
       { href: '/services/commercial', label: 'Commercial' },
     ]},
-    { href: '/portfolio', label: 'Portfolio', icon: <Home className="w-5 h-5" /> },
-    { href: '/process', label: 'Process', icon: <ClipboardList className="w-5 h-5" /> },
-    { href: '/contact', label: 'Contact', icon: <Mail className="w-5 h-5" /> },
+    { href: '/#portfolio', label: 'Portfolio', icon: <Home className="w-5 h-5" /> },
+    { href: '/#contact', label: 'Contact', icon: <Mail className="w-5 h-5" /> },
   ];
 
   // Simplified scroll handler - only determines if scrolled for background change
   const handleScroll = useCallback(() => {
     const currentScrollPos = window.pageYOffset;
     
-    // Determine if scrolled based on scroll position
+    // If on a service or policy page, always keep scrolled true to maintain visible text
+    if (isServiceOrPolicyPage) {
+      setScrolled(true);
+      return;
+    }
+    
+    // For other pages, determine scrolled based on scroll position
     if (currentScrollPos > 20) {
       setScrolled(true);
     } else {
       setScrolled(false);
     }
-  }, []);
+  }, [isServiceOrPolicyPage]);
 
   // Attach and detach scroll listener
   useEffect(() => {
@@ -53,6 +65,16 @@ const Navbar = () => {
   }, [handleScroll]);
 
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
+  
+  // Callback per chiudere il dropdown
+  const closeDropdown = useCallback(() => {
+    setActiveDropdown(null);
+  }, []);
+  
+  // Callback per chiudere il menu mobile
+  const closeMobileMenu = useCallback(() => {
+    setIsOpen(false);
+  }, []);
 
   const toggleDropdown = (index: number, event: React.MouseEvent) => {
     // Stop event propagation to prevent document click from immediately closing the dropdown
@@ -134,17 +156,31 @@ const Navbar = () => {
                     </span>
                   </div>
                 ) : (
-                  <Link 
-                    href={link.href} 
-                    className={`font-body text-base ${
-                      scrolled ? 'text-gray-800 hover:text-primary' : 'text-white hover:text-secondary'
-                    } transition-all duration-300 py-2 ${
-                      url === link.href ? 'font-semibold' : ''
-                    } relative group`}
-                  >
-                    {link.label}
-                    <span className={`absolute -bottom-1 left-0 w-0 h-0.5 ${scrolled ? 'bg-primary' : 'bg-secondary'} transition-all duration-300 group-hover:w-full`}></span>
-                  </Link>
+                  link.href.includes('#') ? (
+                    <AnchorLink
+                      href={link.href} 
+                      className={`font-body text-base ${
+                        scrolled ? 'text-gray-800 hover:text-primary' : 'text-white hover:text-secondary'
+                      } transition-all duration-300 py-2 ${
+                        url === link.href ? 'font-semibold' : ''
+                      } relative group`}
+                    >
+                      {link.label}
+                      <span className={`absolute -bottom-1 left-0 w-0 h-0.5 ${scrolled ? 'bg-primary' : 'bg-secondary'} transition-all duration-300 group-hover:w-full`}></span>
+                    </AnchorLink>
+                  ) : (
+                    <Link 
+                      href={link.href} 
+                      className={`font-body text-base ${
+                        scrolled ? 'text-gray-800 hover:text-primary' : 'text-white hover:text-secondary'
+                      } transition-all duration-300 py-2 ${
+                        url === link.href ? 'font-semibold' : ''
+                      } relative group`}
+                    >
+                      {link.label}
+                      <span className={`absolute -bottom-1 left-0 w-0 h-0.5 ${scrolled ? 'bg-primary' : 'bg-secondary'} transition-all duration-300 group-hover:w-full`}></span>
+                    </Link>
+                  )
                 )}
                 
                 {/* Dropdown menu */}
@@ -159,14 +195,25 @@ const Navbar = () => {
                   >
                     <div className="p-2">
                       {link.dropdown.map((item, i) => (
-                        <Link
-                          key={i}
-                          href={item.href}
-                          className="block px-4 py-2.5 text-sm text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md transition-colors"
-                          onClick={() => setActiveDropdown(null)}
-                        >
-                          {item.label}
-                        </Link>
+                        item.href.includes('#') ? (
+                          <AnchorLink
+                            key={i}
+                            href={item.href}
+                            className="block px-4 py-2.5 text-sm text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md transition-colors"
+                            onClick={closeDropdown}
+                          >
+                            {item.label}
+                          </AnchorLink>
+                        ) : (
+                          <Link
+                            key={i}
+                            href={item.href}
+                            className="block px-4 py-2.5 text-sm text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md transition-colors"
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            {item.label}
+                          </Link>
+                        )
                       ))}
                     </div>
                   </div>
@@ -248,26 +295,48 @@ const Navbar = () => {
                         }`}
                       >
                         {link.dropdown.map((item, i) => (
-                          <Link
-                            key={i}
-                            href={item.href}
-                            className="block text-gray-200 hover:text-secondary text-lg transition-colors"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {item.label}
-                          </Link>
+                          item.href.includes('#') ? (
+                            <AnchorLink
+                              key={i}
+                              href={item.href}
+                              className="block text-gray-200 hover:text-secondary text-lg transition-colors"
+                              onClick={closeMobileMenu}
+                            >
+                              {item.label}
+                            </AnchorLink>
+                          ) : (
+                            <Link
+                              key={i}
+                              href={item.href}
+                              className="block text-gray-200 hover:text-secondary text-lg transition-colors"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {item.label}
+                            </Link>
+                          )
                         ))}
                       </div>
                     </div>
                   ) : (
-                    <Link 
-                      href={link.href} 
-                      className="flex items-center text-white hover:text-secondary-light transition-colors text-xl md:text-2xl font-heading"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      <span className="mr-3 text-secondary-light">{link.icon}</span>
-                      {link.label}
-                    </Link>
+                    link.href.includes('#') ? (
+                      <AnchorLink 
+                        href={link.href}
+                        className="flex items-center text-white hover:text-secondary-light transition-colors text-xl md:text-2xl font-heading"
+                        onClick={closeMobileMenu}
+                      >
+                        <span className="mr-3 text-secondary-light">{link.icon}</span>
+                        <span>{link.label}</span>
+                      </AnchorLink>
+                    ) : (
+                      <Link 
+                        href={link.href}
+                        className="flex items-center text-white hover:text-secondary-light transition-colors text-xl md:text-2xl font-heading"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <span className="mr-3 text-secondary-light">{link.icon}</span>
+                        <span>{link.label}</span>
+                      </Link>
+                    )
                   )}
                 </div>
               ))}

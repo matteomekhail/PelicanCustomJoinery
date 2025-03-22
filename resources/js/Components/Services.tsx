@@ -11,6 +11,7 @@ const serviceItems = [
       'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/3b789467-67a8-440c-b6b1-95cd9b511e00/public',
       'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/f1deecc6-d26a-401a-54cd-cf406070ba00/public'
     ],
+    serviceLink: '/services/joinery',
   },
   {
     icon: <PenTool className="w-6 h-6 sm:w-7 sm:h-7" />,
@@ -20,6 +21,7 @@ const serviceItems = [
       'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/4a03fbb4-9e3c-4cd0-d836-5047e61f0500/public',
       'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/c43a604b-f48b-418d-fe68-f7690ba02d00/public'
     ],
+    serviceLink: '/services/joinery',
   },
   {
     icon: <Wrench className="w-6 h-6 sm:w-7 sm:h-7" />,
@@ -29,6 +31,7 @@ const serviceItems = [
       'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/ef4eb51b-8b50-4727-3097-be936e05f800/public',
       'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/0ce70f01-059f-464f-e4b6-9f03a9f1c400/public'
     ],
+    serviceLink: '/services/furniture',
   },
   {
     icon: <Hammer className="w-6 h-6 sm:w-7 sm:h-7" />,
@@ -38,6 +41,7 @@ const serviceItems = [
       'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/9cc57e06-d2c4-4b91-b14c-f57bfae8c700/public',
       'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/bee5cb92-736b-4c22-1451-13692c43c300/public'
     ],
+    serviceLink: '/services/kitchens',
   },
   {
     icon: <Lightbulb className="w-6 h-6 sm:w-7 sm:h-7" />,
@@ -47,6 +51,7 @@ const serviceItems = [
       'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/f1deecc6-d26a-401a-54cd-cf406070ba00/public',
       'https://imagedelivery.net/QNG1HFbshFBF3G5_L-7avQ/1ac9973e-2842-4065-0702-1cb7bc29fe00/public'
     ],
+    serviceLink: '/services/commercial',
   },
 ];
 
@@ -167,7 +172,7 @@ const Services = () => {
                     {service.description}
                   </p>
                   
-                  <a href="#" className="inline-flex items-center text-secondary font-medium group">
+                  <a href={service.serviceLink} className="inline-flex items-center text-secondary font-medium group">
                     Discover More
                     <svg className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>

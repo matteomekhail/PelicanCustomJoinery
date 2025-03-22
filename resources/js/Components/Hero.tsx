@@ -99,14 +99,14 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row gap-5">
               <a 
-                href="#contact" 
+                href="/#contact" 
                 className="btn btn-secondary group flex items-center justify-center"
               >
                 Request Free Quote
                 <ChevronRight className="ml-2 w-5 h-5 transition-all duration-300 group-hover:translate-x-1" />
               </a>
               <a 
-                href="#portfolio" 
+                href="/#portfolio" 
                 className="btn btn-white-outline flex items-center justify-center"
               >
                 View Our Work

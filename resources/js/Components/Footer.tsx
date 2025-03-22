@@ -2,6 +2,7 @@ import React from 'react';
 import { Facebook, Instagram, Linkedin, Phone, Mail, MapPin, Clock, ChevronRight } from 'lucide-react';
 import { Link } from '@inertiajs/react';
 import { motion } from 'framer-motion';
+import AnchorLink from '@/Components/AnchorLink';
 
 const Footer = () => {
   // Animation variants for staggered children animation
@@ -64,13 +65,13 @@ const Footer = () => {
                 </p>
               </div>
               <div className="flex space-x-4">
-                <a href="#" className="bg-white/5 p-2.5 rounded-full hover:bg-secondary/20 transition-colors duration-300 group">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="bg-white/5 p-2.5 rounded-full hover:bg-secondary/20 transition-colors duration-300 group">
                   <Facebook className="w-5 h-5 text-white/80 group-hover:text-secondary transition-colors duration-300" />
                 </a>
-                <a href="#" className="bg-white/5 p-2.5 rounded-full hover:bg-secondary/20 transition-colors duration-300 group">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="bg-white/5 p-2.5 rounded-full hover:bg-secondary/20 transition-colors duration-300 group">
                   <Instagram className="w-5 h-5 text-white/80 group-hover:text-secondary transition-colors duration-300" />
                 </a>
-                <a href="#" className="bg-white/5 p-2.5 rounded-full hover:bg-secondary/20 transition-colors duration-300 group">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="bg-white/5 p-2.5 rounded-full hover:bg-secondary/20 transition-colors duration-300 group">
                   <Linkedin className="w-5 h-5 text-white/80 group-hover:text-secondary transition-colors duration-300" />
                 </a>
               </div>
@@ -86,34 +87,34 @@ const Footer = () => {
               </div>
               <ul className="space-y-3">
                 <li>
-                  <a href="#about" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
+                  <AnchorLink href="/#about" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
                     <ChevronRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
                     <span>About Us</span>
-                  </a>
+                  </AnchorLink>
                 </li>
                 <li>
-                  <a href="#services" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
+                  <AnchorLink href="/#services" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
                     <ChevronRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
                     <span>Services</span>
-                  </a>
+                  </AnchorLink>
                 </li>
                 <li>
-                  <a href="#portfolio" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
+                  <AnchorLink href="/#portfolio" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
                     <ChevronRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
                     <span>Portfolio</span>
-                  </a>
+                  </AnchorLink>
                 </li>
                 <li>
-                  <a href="#process" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
+                  <AnchorLink href="/#process" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
                     <ChevronRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
                     <span>Our Process</span>
-                  </a>
+                  </AnchorLink>
                 </li>
                 <li>
-                  <a href="#contact" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
+                  <AnchorLink href="/#contact" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
                     <ChevronRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
                     <span>Contact</span>
-                  </a>
+                  </AnchorLink>
                 </li>
               </ul>
             </motion.div>
@@ -128,31 +129,31 @@ const Footer = () => {
               </div>
               <ul className="space-y-3">
                 <li>
-                  <a href="#services" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
+                  <a href="/services/furniture" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
                     <ChevronRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
                     <span>Custom Furniture</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#services" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
+                  <a href="/services/kitchens" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
                     <ChevronRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
                     <span>Bespoke Kitchens</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#services" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
+                  <a href="/services/joinery" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
                     <ChevronRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
                     <span>Interior Joinery</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#services" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
+                  <a href="/services/restoration" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
                     <ChevronRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
                     <span>Antique Restoration</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#services" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
+                  <a href="/services/commercial" className="text-white/70 hover:text-secondary transition-colors duration-300 flex items-center group">
                     <ChevronRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
                     <span>Commercial Projects</span>
                   </a>
