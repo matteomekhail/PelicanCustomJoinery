@@ -16,7 +16,7 @@ interface AnchorLinkProps {
   onCancel?: () => void;
   onSuccess?: () => void;
   onError?: () => void;
-  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+  onClick?: (event: React.MouseEvent<Element, MouseEvent>) => void;
 }
 
 /**
@@ -53,10 +53,10 @@ const AnchorLink: React.FC<AnchorLinkProps> = ({
     }
   }, []);
   
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleClick = (e: React.MouseEvent<Element, MouseEvent>) => {
     // Call the external onClick handler if provided
     if (onClick) {
-      onClick(e);
+      onClick(e as React.MouseEvent<HTMLAnchorElement>);
       // If the default is prevented by the external handler, do nothing more
       if (e.defaultPrevented) return;
     }
