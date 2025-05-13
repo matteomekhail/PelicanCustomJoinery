@@ -133,7 +133,7 @@ const Services = () => {
               viewport={{ once: true }}
               className={`mb-24 last:mb-0 ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}
             >
-              <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+              <div className="flex flex-col-reverse lg:flex-row gap-8 lg:gap-12 items-center">
                 {/* Image Grid */}
                 <div className="w-full lg:w-1/2">
                   <div className="grid grid-cols-2 gap-4">
@@ -157,7 +157,7 @@ const Services = () => {
                 </div>
 
                 {/* Content */}
-                <div className="w-full lg:w-1/2 text-center lg:text-left">
+                <div className="w-full lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/5 mb-6">
                     <div className="text-secondary">
                       {service.icon}
